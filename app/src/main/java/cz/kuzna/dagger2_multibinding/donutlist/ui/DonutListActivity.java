@@ -6,11 +6,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
-import android.widget.Toast;
 
 import javax.inject.Inject;
 
-import cz.kuzna.core.inject.HasComponentBuilder;
+import cz.kuzna.core.inject.ComponentBuilderContainer;
 import cz.kuzna.core.widget.DividerItemDecoration;
 import cz.kuzna.dagger2_multibinding.R;
 import cz.kuzna.dagger2_multibinding.donutlist.inject.DonutListComponent;
@@ -56,7 +55,7 @@ public class DonutListActivity extends D2MvpActivity<DonutListPresenter, DonutLi
     }
 
     @Override
-    protected void setupComponent(HasComponentBuilder componentBuilder) {
+    protected void setupComponent(ComponentBuilderContainer componentBuilder) {
         ((DonutListComponent.Builder) componentBuilder.getComponentBuilder(this.getClass()))
                 .module(new DonutListModule())
                 .build()
@@ -65,7 +64,7 @@ public class DonutListActivity extends D2MvpActivity<DonutListPresenter, DonutLi
 
     @Override
     public void onItemClick(int position, View view) {
-        Toast.makeText(getApplicationContext(), "Clicked on " + position, Toast.LENGTH_SHORT).show();
+        getPresenter().goToDetail(position);
     }
 
     @Override

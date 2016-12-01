@@ -21,20 +21,20 @@ public class DonutsAdapter extends RecyclerView.Adapter<DonutViewHolder> {
     public DonutsAdapter() {
         items = new ArrayList<>();
 
-        items.add(new Donut(R.drawable.ic_donut_blue_moon_sprinkle, R.string.blue_moon_sprinkle, false));
-        items.add(new Donut(R.drawable.ic_donut_butter_nut, R.string.butter_nut, false));
-        items.add(new Donut(R.drawable.ic_donut_caviar_strawberry, R.string.caviar_strawberry, false));
-        items.add(new Donut(R.drawable.ic_donut_dark_chocolate_sprinkle, R.string.dark_chocolate_sprinkle, true));
+        items.add(new Donut(R.drawable.ic_donut_blue_moon_sprinkle, R.string.blue_moon_sprinkle));
+        items.add(new Donut(R.drawable.ic_donut_butter_nut, R.string.butter_nut));
+        items.add(new Donut(R.drawable.ic_donut_caviar_strawberry, R.string.caviar_strawberry));
+        items.add(new Donut(R.drawable.ic_donut_dark_chocolate_sprinkle, R.string.dark_chocolate_sprinkle));
 
-        items.add(new Donut(R.drawable.ic_donut_green_tea_sprinkle, R.string.green_tea_sprinkle, true));
-        items.add(new Donut(R.drawable.ic_donut_lemon_sprinkle, R.string.lemon_sprinkle, false));
-        items.add(new Donut(R.drawable.ic_donut_maple_iced, R.string.maple_iced, false));
-        items.add(new Donut(R.drawable.ic_donut_raspberry, R.string.raspberry, true));
+        items.add(new Donut(R.drawable.ic_donut_green_tea_sprinkle, R.string.green_tea_sprinkle));
+        items.add(new Donut(R.drawable.ic_donut_lemon_sprinkle, R.string.lemon_sprinkle));
+        items.add(new Donut(R.drawable.ic_donut_maple_iced, R.string.maple_iced));
+        items.add(new Donut(R.drawable.ic_donut_raspberry, R.string.raspberry));
 
-        items.add(new Donut(R.drawable.ic_donut_strawberry_sprinkle, R.string.strawberry_sprinkle, false));
-        items.add(new Donut(R.drawable.ic_donut_sugar_pink, R.string.sugar_pink, false));
-        items.add(new Donut(R.drawable.ic_donut_vanilla_iced, R.string.vanilla_iced, true));
-        items.add(new Donut(R.drawable.ic_donut_vanilla_sprinkle, R.string.vanilla_sprinkle, true));
+        items.add(new Donut(R.drawable.ic_donut_strawberry_sprinkle, R.string.strawberry_sprinkle));
+        items.add(new Donut(R.drawable.ic_donut_sugar_pink, R.string.sugar_pink));
+        items.add(new Donut(R.drawable.ic_donut_vanilla_iced, R.string.vanilla_iced));
+        items.add(new Donut(R.drawable.ic_donut_vanilla_sprinkle, R.string.vanilla_sprinkle));
     }
 
     @Override

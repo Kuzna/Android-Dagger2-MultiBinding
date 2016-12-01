@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 
 import javax.inject.Inject;
 
-import cz.kuzna.core.inject.HasComponentBuilder;
+import cz.kuzna.core.inject.ComponentBuilderContainer;
 import cz.kuzna.core.mvp.MvpActivity;
 import cz.kuzna.core.mvp.MvpPresenter;
 import cz.kuzna.core.mvp.MvpView;
@@ -28,5 +28,5 @@ public abstract class D2MvpActivity<P extends MvpPresenter<V>, V extends MvpView
         super.setPresenter(presenter);
     }
 
-    protected abstract void setupComponent(final HasComponentBuilder componentBuilder);
+    protected abstract void setupComponent(final ComponentBuilderContainer componentBuilder);
 }

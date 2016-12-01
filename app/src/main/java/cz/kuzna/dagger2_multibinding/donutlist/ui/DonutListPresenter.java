@@ -1,9 +1,11 @@
 package cz.kuzna.dagger2_multibinding.donutlist.ui;
 
 import android.content.Context;
+import android.content.Intent;
 
 import cz.kuzna.core.inject.scope.ActivityScope;
 import cz.kuzna.core.mvp.MvpPresenter;
+import cz.kuzna.dagger2_multibinding.detail.ui.DonutDetailActivity;
 
 /**
  * @author Radek Kuznik
@@ -16,7 +18,10 @@ public class DonutListPresenter extends MvpPresenter<DonutListView> {
         super(context);
     }
 
-    public void goToDetail(final long donutId) {
+    public void goToDetail(final int donutId) {
+        final Intent intent = new Intent(getContext(), DonutDetailActivity.class);
+        intent.putExtra(DonutDetailActivity.EXTRA_DONUT_ID, donutId);
 
+        getContext().startActivity(intent);
     }
 }

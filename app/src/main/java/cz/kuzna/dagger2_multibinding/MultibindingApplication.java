@@ -8,12 +8,12 @@ import java.util.Map;
 import javax.inject.Inject;
 
 import cz.kuzna.core.inject.ComponentBuilder;
-import cz.kuzna.core.inject.HasComponentBuilder;
+import cz.kuzna.core.inject.ComponentBuilderContainer;
 
 /**
  * @author Radek Kuznik
  */
-public class MultibindingApplication extends Application implements HasComponentBuilder {
+public class MultibindingApplication extends Application implements ComponentBuilderContainer {
 
     @Inject
     Map<Class<?>, ComponentBuilder> componentBuilders;

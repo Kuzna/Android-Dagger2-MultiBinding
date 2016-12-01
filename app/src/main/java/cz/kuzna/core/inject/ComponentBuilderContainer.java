@@ -3,7 +3,7 @@ package cz.kuzna.core.inject;
 /**
  * @author Radek Kuznik
  */
-public interface HasComponentBuilder {
+public interface ComponentBuilderContainer {
 
     ComponentBuilder getComponentBuilder(Class<?> clazz);
 }
