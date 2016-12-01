@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Dagger2-Multibinding</string>
+
+    <string name="blue_moon_sprinkle">Blue moon sprinkle</string>
+    <string name="butter_nut">Butter nut</string>
+    <string name="caviar_strawberry">Caviar strawberry</string>
+    <string name="dark_chocolate_sprinkle">Dark chocolate sprinkle</string>
+    <string name="green_tea_sprinkle">Green tea sprinkle</string>
+    <string name="lemon_sprinkle">Lemon sprinkle</string>
+    <string name="maple_iced">Maple iced</string>
+    <string name="raspberry">Raspberry</string>
+    <string name="strawberry_sprinkle">Strawberry sprinkle</string>
+    <string name="sugar_pink">Sugar pink</string>
+    <string name="vanilla_iced">Vanilla iced</string>
+    <string name="vanilla_sprinkle">Vanilla sprinkle</string>
+</resources>
