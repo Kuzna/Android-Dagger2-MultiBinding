@@ -44,6 +44,13 @@ dependencies {
     compile "com.squareup.retrofit2:converter-gson:$ext.retrofitVersion"
     compile "com.squareup.okhttp3:logging-interceptor:$ext.okHttpLoggingVersion"
 
+
+    // RxJava
+    compile "io.reactivex:rxandroid:$ext.rxAndroidVersion"
+    // Because RxAndroid releases are few and far between, it is recommended you also
+    // explicitly depend on RxJava's latest version for bug fixes and new features.
+    compile "io.reactivex:rxjava:$ext.rxJavaVersion"
+
     // Logging
     compile "com.jakewharton.timber:timber:$ext.timberVersion"
 

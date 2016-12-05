@@ -9,6 +9,7 @@ import javax.inject.Inject;
 
 import cz.kuzna.core.inject.ComponentBuilder;
 import cz.kuzna.core.inject.ComponentBuilderContainer;
+import timber.log.Timber;
 
 /**
  * @author Radek Kuznik
@@ -23,6 +24,11 @@ public class MultibindingApplication extends Application implements ComponentBui
     @Override
     public void onCreate() {
         super.onCreate();
+
+        if(BuildConfig.DEBUG) {
+            Timber.plant(new Timber.DebugTree());
+        }
+
         appComponent = DaggerAppComponent
                 .builder()
                 .appModule(new AppModule(this))

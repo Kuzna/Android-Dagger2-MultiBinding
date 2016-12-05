@@ -3,6 +3,7 @@ package cz.kuzna.dagger2_multibinding;
 import javax.inject.Singleton;
 
 import cz.kuzna.dagger2_multibinding.shared.inject.BindingModule;
+import cz.kuzna.dagger2_multibinding.shared.rest.inject.RestModule;
 import dagger.Component;
 
 /**
@@ -12,6 +13,7 @@ import dagger.Component;
 @Component(
         modules = {
                 AppModule.class,
+                RestModule.class,
                 BindingModule.class
         }
 )

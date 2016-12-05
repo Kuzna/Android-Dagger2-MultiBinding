@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cz.kuzna.dagger2_multibinding">
 
+    <!-- Required to network connection -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name=".MultibindingApplication"
         android:allowBackup="true"
@@ -16,7 +20,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".detail.ui.DonutDetailActivity"></activity>
+        <activity android:name=".detail.ui.DonutDetailActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".donutlist.ui.DonutListActivity" />
+        </activity>
     </application>
 
 </manifest>

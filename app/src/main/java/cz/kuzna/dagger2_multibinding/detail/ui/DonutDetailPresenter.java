@@ -1,6 +1,7 @@
 package cz.kuzna.dagger2_multibinding.detail.ui;
 
 import android.content.Context;
+import android.widget.Toast;
 
 import javax.inject.Inject;
 
@@ -9,6 +10,7 @@ import cz.kuzna.core.mvp.MvpPresenter;
 import cz.kuzna.dagger2_multibinding.R;
 import cz.kuzna.dagger2_multibinding.order.platform.OrderController;
 import cz.kuzna.dagger2_multibinding.shared.donut.domain.Donut;
+import rx.functions.Action1;
 
 /**
  * @author Radek Kuznik
@@ -74,6 +76,20 @@ public class DonutDetailPresenter extends MvpPresenter<DonutDetailView> {
     }
 
     public void orderNow(final int donutId) {
-        this.orderController.order(donutId);
+        this.orderController.order(donutId).subscribe(new Action1<Boolean>() {
+            @Override
+            public void call(final Boolean result) {
+                if(result == null || !result) {
+                    Toast.makeText(getContext(), "Order failed", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getContext(), "Order was submitted", Toast.LENGTH_LONG).show();
+                }
+            }
+        }, new Action1<Throwable>() {
+            @Override
+            public void call(Throwable throwable) {
+                Toast.makeText(getContext(), "Order failed", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
