@@ -44,6 +44,8 @@ dependencies {
     compile "com.squareup.retrofit2:converter-gson:$ext.retrofitVersion"
     compile "com.squareup.okhttp3:logging-interceptor:$ext.okHttpLoggingVersion"
 
+    // Logging
+    compile "com.jakewharton.timber:timber:$ext.timberVersion"
 
     //
     // Unit testing

@@ -29,6 +29,7 @@ ext {
     retrofitVersion         = '2.1.0'
     okHttpLoggingVersion    = '3.4.2'
     butterKnifeVersion      = '8.4.0'
+    timberVersion           = '4.3.1'
 
     // App test dependencies
     junitVersion            = '4.12'

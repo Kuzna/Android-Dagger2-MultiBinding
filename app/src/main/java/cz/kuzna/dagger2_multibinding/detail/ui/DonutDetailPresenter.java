@@ -2,9 +2,12 @@ package cz.kuzna.dagger2_multibinding.detail.ui;
 
 import android.content.Context;
 
+import javax.inject.Inject;
+
 import cz.kuzna.core.inject.scope.ActivityScope;
 import cz.kuzna.core.mvp.MvpPresenter;
 import cz.kuzna.dagger2_multibinding.R;
+import cz.kuzna.dagger2_multibinding.order.platform.OrderController;
 import cz.kuzna.dagger2_multibinding.shared.donut.domain.Donut;
 
 /**
@@ -13,9 +16,12 @@ import cz.kuzna.dagger2_multibinding.shared.donut.domain.Donut;
 @ActivityScope
 public class DonutDetailPresenter extends MvpPresenter<DonutDetailView> {
 
+    private OrderController orderController;
 
-    public DonutDetailPresenter(Context context) {
+    @Inject
+    public DonutDetailPresenter(Context context, final OrderController orderController) {
         super(context);
+        this.orderController = orderController;
     }
 
     public void loadData(final int donutId) {
@@ -65,5 +71,9 @@ public class DonutDetailPresenter extends MvpPresenter<DonutDetailView> {
         }
 
         getView().showDetail(donut);
+    }
+
+    public void orderNow(final int donutId) {
+        this.orderController.order(donutId);
     }
 }

@@ -10,4 +10,6 @@ import cz.kuzna.dagger2_multibinding.shared.donut.domain.Donut;
 public interface DonutDetailView extends MvpView {
 
     void showDetail(final Donut donut);
+    void showOrderProgress();
+    void hideOrderProgress();
 }
