@@ -19,7 +19,7 @@ public class MultibindingApplication extends Application implements ComponentBui
     @Inject
     Map<Class<?>, ComponentBuilder> componentBuilders;
 
-    private AppComponent appComponent;
+    AppComponent appComponent;
 
     @Override
     public void onCreate() {
@@ -29,6 +29,10 @@ public class MultibindingApplication extends Application implements ComponentBui
             Timber.plant(new Timber.DebugTree());
         }
 
+        initComponents();
+    }
+
+    public void initComponents() {
         appComponent = DaggerAppComponent
                 .builder()
                 .appModule(new AppModule(this))

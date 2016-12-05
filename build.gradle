@@ -37,4 +37,10 @@ ext {
     junitVersion            = '4.12'
     mockitoVersion          = '1.10.19'
     espressoVersion         = '2.2.2'
+
+    robolectricVersion      = '3.1.4'
+    mockWebServerVersion    = '2.7.5'
+
+    supportTestVersion      = '0.5'
+    espressoVersion         = '2.2.2'
 }

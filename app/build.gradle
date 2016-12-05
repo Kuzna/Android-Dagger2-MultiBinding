@@ -17,6 +17,24 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    lintOptions {
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+    }
+    testOptions.unitTests {
+        returnDefaultValues = true
+        all {
+            ignoreFailures = true
+            testLogging {
+                events 'passed', 'skipped', 'failed', 'standardOut', 'standardError'
+            }
+        }
+    }
 }
 
 dependencies {
@@ -47,17 +65,20 @@ dependencies {
 
     // RxJava
     compile "io.reactivex:rxandroid:$ext.rxAndroidVersion"
-    // Because RxAndroid releases are few and far between, it is recommended you also
-    // explicitly depend on RxJava's latest version for bug fixes and new features.
     compile "io.reactivex:rxjava:$ext.rxJavaVersion"
 
     // Logging
     compile "com.jakewharton.timber:timber:$ext.timberVersion"
 
-    //
     // Unit testing
-    //
     testCompile "junit:junit:$ext.junitVersion"
+
+    testAnnotationProcessor "com.google.dagger:dagger-compiler:$ext.daggerVersion"
+
+    testCompile "org.robolectric:robolectric:$ext.robolectricVersion"
+    testCompile ("com.squareup.okhttp:mockwebserver:$ext.mockWebServerVersion") {
+        exclude module: 'okio'
+    }
 
     // Android testing
     androidTestCompile("com.android.support.test.espresso:espresso-core:$ext.espressoVersion", {
