@@ -34,7 +34,7 @@ public class TestRestModule {
     @Singleton
     Retrofit provideRetrofit(OkHttpClient okHttpClient){
         return new Retrofit.Builder()
-                .baseUrl("http://localhost:48080")
+                .baseUrl("http://127.0.0.1:48123")
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();

@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion 24
@@ -49,11 +50,11 @@ dependencies {
     compile ("com.jakewharton:butterknife:$ext.butterKnifeVersion") {
         exclude module: 'support-annotations'
     }
-    annotationProcessor "com.jakewharton:butterknife-compiler:$ext.butterKnifeVersion"
+    apt "com.jakewharton:butterknife-compiler:$ext.butterKnifeVersion"
 
     // Dagger 2
     compile "com.google.dagger:dagger:$ext.daggerVersion"
-    annotationProcessor "com.google.dagger:dagger-compiler:$ext.daggerVersion"
+    apt "com.google.dagger:dagger-compiler:$ext.daggerVersion"
 
     // Retrofit 2
     compile ("com.squareup.retrofit2:retrofit:$ext.retrofitVersion") {
@@ -73,7 +74,7 @@ dependencies {
     // Unit testing
     testCompile "junit:junit:$ext.junitVersion"
 
-    testAnnotationProcessor "com.google.dagger:dagger-compiler:$ext.daggerVersion"
+    testApt "com.google.dagger:dagger-compiler:$ext.daggerVersion"
 
     testCompile "org.robolectric:robolectric:$ext.robolectricVersion"
     testCompile ("com.squareup.okhttp:mockwebserver:$ext.mockWebServerVersion") {

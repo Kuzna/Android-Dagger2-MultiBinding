@@ -6,13 +6,22 @@ package cz.kuzna.dagger2_multibinding.order.dataaccess;
 
 public class OrderResultDto {
 
-    private int orderId;
+    private boolean status;
+    private String msg;
 
-    public int getOrderId() {
-        return orderId;
+    public boolean isStatus() {
+        return status;
     }
 
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 }
