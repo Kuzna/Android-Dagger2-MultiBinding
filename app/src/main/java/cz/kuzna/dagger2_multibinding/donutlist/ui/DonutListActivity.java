@@ -64,7 +64,7 @@ public class DonutListActivity extends D2MvpActivity<DonutListPresenter, DonutLi
 
     @Override
     public void onItemClick(int position, View view) {
-        getPresenter().goToDetail(position);
+        getPresenter().goToDetail(this, position);
     }
 
     @Override

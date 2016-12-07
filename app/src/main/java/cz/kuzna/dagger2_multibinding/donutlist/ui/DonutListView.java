@@ -7,4 +7,5 @@ import cz.kuzna.core.mvp.MvpView;
  */
 
 public interface DonutListView extends MvpView {
+
 }

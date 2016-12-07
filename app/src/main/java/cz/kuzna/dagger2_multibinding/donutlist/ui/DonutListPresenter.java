@@ -1,5 +1,6 @@
 package cz.kuzna.dagger2_multibinding.donutlist.ui;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
@@ -18,10 +19,10 @@ public class DonutListPresenter extends MvpPresenter<DonutListView> {
         super(context);
     }
 
-    public void goToDetail(final int donutId) {
+    public void goToDetail(final Activity activity, final int donutId) {
         final Intent intent = new Intent(getContext(), DonutDetailActivity.class);
         intent.putExtra(DonutDetailActivity.EXTRA_DONUT_ID, donutId);
 
-        getContext().startActivity(intent);
+        activity.startActivity(intent);
     }
 }
